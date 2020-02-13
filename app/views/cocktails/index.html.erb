@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="page-header">
+    <h1 style="text-align:center">Cocktails List</h1>
+  </div>
+
+  <div class="cards">
+  <% @cocktails.each do |cocktail| %>
+    <%= link_to cocktail_path(cocktail.id) do %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/1600x900/?cocktail,<%= cocktail.name.gsub(/\s+/, "") %>)">
+            <%= cocktail.name.capitalize %>
+        </div>
+    <% end %>
+  <% end %>
+  </div>
+</div>
