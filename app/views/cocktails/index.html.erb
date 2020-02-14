@@ -1,15 +1,20 @@
-<div class="container">
+<%= render 'shared/banner' %>
+
+<div class="container mb-5">
   <div class="page-header">
     <h1 style="text-align:center">Cocktails List</h1>
   </div>
 
   <div class="cards">
   <% @cocktails.each do |cocktail| %>
-    <%= link_to cocktail_path(cocktail.id) do %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/1600x900/?cocktail,<%= cocktail.name.gsub(/\s+/, "") %>)">
-            <%= cocktail.name.capitalize %>
-        </div>
-    <% end %>
+    <div class="parent" style="position:relative">
+      <%= link_to cocktail_path(cocktail.id) do %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo.key %>')">
+              <%= cocktail.name.capitalize %>
+          </div>
+      <% end %>
+      <i class="far fa-heart"></i>
+    </div>
   <% end %>
   </div>
 </div>

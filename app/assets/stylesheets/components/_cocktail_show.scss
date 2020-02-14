@@ -5,21 +5,16 @@
 }
 
 .cocktail-show-card {
-    background: #ffeadb;
+    background: rgba(249, 222, 205,0.8);
     padding: 20px;
     margin-bottom: 20px;
     box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
     border-radius: 3px;
+    color: #3C1E13;
+    text-align: center;
 }
 
 
-.cocktail-show-card {
-    background: #F8F9FA;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-    border-radius: 3px;
-}
 
 .margin-top-negative {
     margin-top: -75px;
@@ -27,4 +22,23 @@
 
 .dose-list {
   display :flex
+}
+
+a {
+  color: #3C1E13
+}
+a:hover {
+  text-decoration: none;
+  color: #3C1E13
+
+}
+
+.fa-trash-alt {
+  font-size: 30px;
+  color: white;
+  border-radius: 50%;
+  border: 1px solid white;
+  padding: 20px;
+  // margin-top: -275px;
+  margin-right: 100px;
 }

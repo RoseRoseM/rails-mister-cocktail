@@ -17,3 +17,6 @@
 
 console.log('Hello World from Webpacker')
 import 'bootstrap';
+
+import { markAsFavorite } from '../components/favorite';
+markAsFavorite();

@@ -1,13 +1,13 @@
 
-<div class="top-picture" style="background-image: url('https://source.unsplash.com/1600x900/?cocktail,<%= @cocktail.name.gsub(/\s+/, "") %>')"></div>
-<div class="container margin-top-negative">
+<div class="top-picture" style="background-image: url('<%= cl_image_path @cocktail.photo.key %>')"></div>
+<div class="container margin-top-negative" >
   <div class="row">
     <div class="col-12">
       <div class="cocktail-show-card">
-        <h1><%= @cocktail.name.capitalize %></h1>
+        <h1 class ="justify-content-center"><%= @cocktail.name.capitalize %></h1>
       </div>
       <div class="cocktail-show-card">
-        <h3>How to make this cocktail</h3>
+        <h3>How to make this Boozy dessert</h3>
         <ul>
           <% @cocktail.doses.each do |dose| %>
             <div class = "dose-list">
@@ -17,11 +17,14 @@
         </ul>
       </div>
     </div>
+    <%= link_to cocktail_path(@cocktail), method: :delete do %>
+      <i class="fas fa-trash-alt" style = "position:absolute"></i>
+    <% end %>
   </div>
 </div>
 
 
-<div class="container">
+<div class="container" style = "color: #3C1E13" >
   <h3>Add doses</h3>
 
   <%= simple_form_for [@cocktail, @dose] do |f| %>
@@ -34,6 +37,7 @@
   <%= link_to cocktails_path do %>
     <p><i class="fas fa-undo-alt"></i></i> Back to list</p>
   <% end %>
+
+
 </div>
 
-<%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
